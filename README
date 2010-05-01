@@ -1,0 +1,32 @@
+Amoeba is going to be a free game similar to commercial games
+like Worms or Snails. It is being developed under Pascal with
+the ObjectPascal and Delphi/Kylix extensions using the open 
+source freepascal compiler and the SDL4Freepascal libraries.
+The primary target OS is x86/ppc linux, but ports to other
+systems and platforms should be possible and are likely to
+happen. 
+
+At the moment, amoeba is in its early development stage; there
+is nothing even remotely playable (yet). I'm currently developing
+the neccesary libraries to provide graphics, input and physics
+handling which are needed to create a working game engine
+So, at this time, you can only compile the libraries and some
+small demos (which test the various units classes and stuff).
+For details how to do this see the INSTALL file.
+
+Also, there isn't any real documentation yet, but expect this
+to change in the future... :)
+
+As this project (like most open source projects) is developed
+in spare time, any help is welcome - especially for creating
+graphics, as I am a lousy artist. Folks who have some experience 
+with pascal/delphi/kylix coding are also welcome.
+
+So, have fun with those little demo things and have patience if
+you are waiting for the real game (or even better: contribute).
+
+Amoeba is published under the GPL with exception to the contents
+of the directory "headers" which are published under the LGPL.
+
+
+2004/2005 Christian Speckner

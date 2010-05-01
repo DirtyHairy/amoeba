@@ -1,0 +1,33 @@
+In order to compile amoeba (demos), you need a working
+FreePascal installation (fpc 2.0 works). In addition,
+you need the SDL4Freepascal libraries and (of course)
+SDL itself - you can get those at "sdl4fp.souceforge.net" 
+and "www.libsdl.org". Also, you will need a working
+SDL_ttf installation (version 2.0.6 works).
+
+If everything is set up correctly, a simple "make" in the
+amoeba top directory should do the job. If you want to
+add any compiler options (or disable debugging output), you'll
+have to edit the makefile manually.
+In order to compile the demos, do "make demos".
+
+This has only been tested on linux x86/ppc; if anyone tries
+compiling on other platforms: please tell me your experience...
+
+
+Things you might find after compilation (make demos):
+
+/demos/graphdemo:
+Tests the graphics subsystem displaying some nice blinking stars,
+a swarm of flies (you can control them with the arrow keys;
+space goes on to the next demo). In addition, if you copy
+a small(!) bmp into the directory containing graphdemo, it will
+perform various blitting tests and tell you the results.
+
+
+P.S.: If graphics seem slow, you should try using the SDL
+dga video driver ("export SDL_VIDEODRIVER=dga"); this
+speeds up things tremendously (if it doesn't trash X11).
+
+
+2004/2005 Christian Speckner
