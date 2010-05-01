@@ -1,0 +1,10 @@
+Daniel F Moisset <dmoisset@grulic.org.ar>
+  - The original author, ported the basic SDL libraries
+  - Demos
+
+Elio Cuevas Gomez <elcugo@users.sourceforge.net>
+  - Some help with mantaining the library
+  - More demos
+
+Christian Speckner
+  - SDL_ttf
