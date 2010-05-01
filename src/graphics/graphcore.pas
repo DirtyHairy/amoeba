@@ -218,7 +218,7 @@ begin
   Pixels := PSurface.pixels;
 end;
 
-function TSDL_Surface.PGetRAWPixel(x,y: Uint16);
+function TSDL_Surface.PGetRAWPixel(x,y: Uint16): UInt32;
 var
   Index16: ^Uint16;
   Index32: ^Uint32;

@@ -1,3 +1,12 @@
+========================= WARNING =========================
+This file is outdated and will be revised. For the
+meantime, the curious can compile the code via
+
+  fpcmake; make
+
+(presuming they have a working fpc, SDL and SDL_ttf)
+===========================================================
+
 In order to compile amoeba (demos), you need a working
 FreePascal installation (fpc 2.0 works). In addition,
 you need the SDL4Freepascal libraries and (of course)

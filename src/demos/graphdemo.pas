@@ -89,7 +89,7 @@ begin
       GraphicsEngine.Surface.RGBPixels[Pixels[i,1],Pixels[i,2]] := RGB(0,0,0);
       repeat until (SDL_GetTicks - Timer) > 1;
     end;
-    while SDL_PollEvent(@Event) = 1 do begin
+    while SDL_PollEvent(@Event) = True do begin
       if Event.eventtype = SDL_KEYDOWN then quitflag := true;
     end;
   until quitflag;
@@ -117,7 +117,7 @@ begin
       end;
       GraphicsEngine.Surface.RAWPixels[Pixels[i,1],Pixels[i,2]] := Pixels2[i];
     end;
-    while SDL_PollEvent(@Event) = 1 do begin
+    while SDL_PollEvent(@Event) = True do begin
       if Event.eventtype = SDL_KEYDOWN then case SDL_KeyboardEvent(Event).keysym.sym of
         SDLK_SPACE: quitflag := true;
 	SDLK_UP: if dy_up > 1 then Dec(dy_up) else Inc(dy_down);
@@ -204,7 +204,7 @@ begin
       Rm2 := 1; n := 1;
       NewParticle;
     end;
-    while SDL_PollEvent(@Event) = 1 do 
+    while SDL_PollEvent(@Event) = True do 
       if Event.eventtype = SDL_KEYDOWN then quitflag := true;    
   until quitflag;
  writeln('Aggregate comlete; fractal dimension was ', FloatToStrF(ln(n) / ln(sqrt(Rm2)), ffFixed, 5, 5), ' .');
@@ -222,7 +222,7 @@ begin
   GraphicsEngine.surface.Line(1,1,1,1,255,255,255);
   GraphicsEngine.surface.UpdateScreen;
   repeat
-    repeat sleep(10); until SDL_PollEvent(@Event) = 1;
+    repeat sleep(10); until SDL_PollEvent(@Event) = True;
     sleep(10);
   until Event.eventtype = SDL_KEYDOWN;
 end;
@@ -235,7 +235,7 @@ begin
   repeat
     GraphicsEngine.surface.line(Random(640), Random(480), Random(640), Random(480), Random(256), Random(256),
       Random(256));
-    while SDL_PollEvent(@Event) = 1 do
+    while SDL_PollEvent(@Event) = True do
       if Event.eventtype = SDL_KEYDOWN then quitflag := true;
   until quitflag;
 end;
@@ -296,7 +296,7 @@ begin
     end else if energy = -4 then begin
       if Random < exp8 then Spinflip;
     end;
-    while SDL_PollEvent(@Event) = 1 do
+    while SDL_PollEvent(@Event) = True do
       if Event.eventtype = SDL_KEYDOWN then case SDL_KeyboardEvent(Event).keysym.sym of
         SDLK_SPACE: quitflag := true;
 	SDLK_LEFT: if temp > 0.05 then begin
@@ -452,7 +452,7 @@ begin
       if ( cntr mod 200 = 0) then Render;
     end;
     inc(cntr);
-    while SDL_PollEvent(@Event) = 1 do 
+    while SDL_PollEvent(@Event) = True do 
      if Event.eventtype = SDL_KEYDOWN then case SDL_KeyboardEvent(Event).keysym.sym of
         SDLK_SPACE: quitflag := true;
 	SDLK_LEFT: begin if temp > step then
@@ -501,7 +501,7 @@ begin
   timer := SDL_GetTicks;
   GraphicsEngine.Surface.Clear;
   repeat
-    if SDL_PollEvent(@Event) = 1 then
+    if SDL_PollEvent(@Event) = True then
       if Event.eventtype = SDL_KEYDOWN then quitflag := true;
     GraphicsEngine.Surface.BlitFrom(bmpSurface, NIL, Random(640 - bmpSurface.surface.w), Random(480 - bmpSurface.surface.h));
     inc(j);
@@ -519,7 +519,7 @@ begin
   timer := SDL_GetTicks;
   GraphicsEngine.Surface.Clear;
   repeat
-    if SDL_PollEvent(@Event) = 1 then
+    if SDL_PollEvent(@Event) = True then
       if Event.eventtype = SDL_KEYDOWN then quitflag := true;
     GraphicsEngine.Surface.BlitFrom(bmpSurface, NIL, Random(640 - bmpSurface.surface.w),
       Random(480 - bmpSurface.surface.h));
@@ -538,7 +538,7 @@ begin
   timer := SDL_GetTicks;
   GraphicsEngine.Surface.Clear;
   repeat
-    if SDL_PollEvent(@Event) = 1 then
+    if SDL_PollEvent(@Event) = True then
       if Event.eventtype = SDL_KEYDOWN then quitflag := true;
     GraphicsEngine.Surface.BlitFrom(bmpSurface, NIL, Random(640 - bmpSurface.surface.w), Random(480 - bmpSurface.surface.h));
     inc(j);
