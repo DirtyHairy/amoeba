@@ -1,0 +1,20 @@
+[package]
+name = Amoeba
+version = tech demo
+
+[default]
+fpcdir = /usr/lib/fpc/2.2.0/
+
+[compiler]
+options = -Sd
+sourcedir = src/core src/demos src/graphics src/headers src/headers/sdl4fpc
+targetdir = bin
+unittargetdir = units
+
+[target]
+programs = graphdemo
+units = sdl sdl__rwops sdl_mouse sdl_types sdl_audio sdl_events sdl_syswm
+units = sdl_video sdl_cdrom sdl_keyboard sdl_timer stdio sdl_error SDL_ttf
+units = exceptions amoebadebug exceptions
+units = graphcore graphengine fonts
+units = coreinit
