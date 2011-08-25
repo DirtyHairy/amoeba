@@ -187,7 +187,7 @@ end;
 
 procedure TSDL_Surface.Clear; overload;
 begin
-  SDL_FillRect(PSurface, NIL, SDL_MapRGB(PSurface^.format,0,0,0));
+  SDL_FillRect(PSurface, NIL, SDL_MapRGB(PSurface^.format, 0, 0, 0));
   if PInstantUpdate then
     if SW_Surface in PFlags then SDL_UpdateRect(PSurface,0,0,0,0);
 end;

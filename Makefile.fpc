@@ -3,11 +3,12 @@ name = Amoeba
 version = tech demo
 
 [default]
-fpcdir = /usr/lib/fpc/2.2.0/
+fpcdir = /usr/lib/fpc/2.4.0/
 
 [compiler]
 options = -Sd
 sourcedir = src/core src/demos src/graphics src/headers src/headers/sdl4fpc
+unitdir = src/core:src/graphics:src/headers:src/headers/sdl4fpc
 targetdir = bin
 unittargetdir = units
 

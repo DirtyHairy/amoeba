@@ -20,7 +20,7 @@ little demo to test graphics classes
 
 ------------------------------------------}
 
-{$DEFINE NO_FULLSCREEN}
+{_$DEFINE NO_FULLSCREEN}
 
 program Graphdemo;
 
@@ -118,7 +118,7 @@ begin
       GraphicsEngine.Surface.RAWPixels[Pixels[i,1],Pixels[i,2]] := Pixels2[i];
     end;
     while SDL_PollEvent(@Event) = True do begin
-      if Event.eventtype = SDL_KEYDOWN then case SDL_KeyboardEvent(Event).keysym.sym of
+      if Event.eventtype = SDL_KEYDOWN then case Event.key.keysym.sym of
         SDLK_SPACE: quitflag := true;
 	SDLK_UP: if dy_up > 1 then Dec(dy_up) else Inc(dy_down);
 	SDLK_DOWN: if dy_down > 1 then Dec(dy_down) else Inc(dy_up);
@@ -297,7 +297,7 @@ begin
       if Random < exp8 then Spinflip;
     end;
     while SDL_PollEvent(@Event) = True do
-      if Event.eventtype = SDL_KEYDOWN then case SDL_KeyboardEvent(Event).keysym.sym of
+      if Event.eventtype = SDL_KEYDOWN then case Event.key.keysym.sym of
         SDLK_SPACE: quitflag := true;
 	SDLK_LEFT: if temp > 0.05 then begin
 	  temp := temp - 0.05;
@@ -453,7 +453,7 @@ begin
     end;
     inc(cntr);
     while SDL_PollEvent(@Event) = True do 
-     if Event.eventtype = SDL_KEYDOWN then case SDL_KeyboardEvent(Event).keysym.sym of
+     if Event.eventtype = SDL_KEYDOWN then case Event.key.keysym.sym of
         SDLK_SPACE: quitflag := true;
 	SDLK_LEFT: begin if temp > step then
 	  temp := temp - step;	
@@ -553,7 +553,7 @@ end;
 
 begin
   Randomize;
-  try
+(*  try *)
     InitCore;
     {$IFDEF NO_FULLSCREEN}
     InitSurface(false);
@@ -590,7 +590,7 @@ begin
       Font10.Destroy;
     end;
     ShutdownCore;
-  except
+(*  except
     panic('Fatal: unhandled exception!');
-  end;
+  end;*)
 end.
